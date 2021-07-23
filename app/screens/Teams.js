@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, FlatList, ScrollView, ActivityIndicator } from 'react-native';
-import styles from "./resource/styles/style";
-import Api from './api'
+import { Text, View, FlatList, TouchableOpacity, ActivityIndicator } from 'react-native';
+import styles from "../assets/styles/style";
+import Api from '../Api';
 
-export default class home extends Component {
+export default class Teams extends Component {
 
     state={
-        back: true,
         list:[],
     }
 
@@ -26,7 +25,9 @@ export default class home extends Component {
     renderIt = ({item}) => {
       return(
         <TouchableOpacity
-        style={styles.btnRegion}>
+        style={styles.btnRegion}
+        onPress ={()=> {this.props.navigation.navigate('Add New Team');}}
+        >
             <Text style={styles.textBtnRegion}>{item.name}</Text>
         </TouchableOpacity>
       )  
@@ -34,17 +35,17 @@ export default class home extends Component {
     render() {
         return (
             <View style={styles.mainContainer}>
-                <Text style={styles.titleHome}>All Regions</Text>
+                <Text style={styles.titleHome}>My Teams</Text>
                 <Text style={styles.descriptionHome}>Choose a region and create a new team.</Text>
                 <View>
-                    <ScrollView style={styles.scroll}>
+                   
                         <FlatList
                             data={this.state.list}
                             ListEmptyComponent={this.empty}
                             renderItem={this.renderIt}
                         >
                         </FlatList>
-                    </ScrollView>
+                    
                 </View>
             </View>
         )
