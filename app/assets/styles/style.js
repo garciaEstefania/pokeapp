@@ -6,17 +6,18 @@ const HEIGHT=Dimensions.get("window").height;
 const styles = StyleSheet.create({
     //HOME SCREEN
     titleHome:{
-        fontSize: HEIGHT * 0.05,
-        //fontFamily: '',
+        fontSize: HEIGHT * 0.04,
+        fontFamily: 'PokemonClassic',
     },
     descriptionHome:{
-        fontSize: HEIGHT * 0.025,
+        fontSize: HEIGHT * 0.020,
         paddingVertical: 10,
-        color: "#A0522D"
-        //fontFamily: '',
+        color: "#A0522D",
+        fontFamily: 'PokemonClassic',
     },
     mainContainer:{
-        padding: 50,
+        paddingHorizontal: 50,
+        paddingVertical: 20,
     },
     btnRegion:{
         flex: 1,
@@ -30,6 +31,7 @@ const styles = StyleSheet.create({
     textBtn:{
         color: "#FFF",
         textTransform: 'uppercase',
+        fontFamily: 'PokemonClassic',
     },
 
     //ADD NEW TEAM SCREEN
@@ -48,8 +50,11 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         justifyContent: "center",
         alignItems: "flex-start",
-        
         paddingLeft: 20,
+    },
+    inputTeamName:{
+        width: "100%",
+        fontFamily: 'PokemonClassic',
     },
     listContainer:{
         flex: 0.8,
@@ -91,8 +96,13 @@ const styles = StyleSheet.create({
         alignItems: "flex-start",
     },
     pokeName:{
-        fontSize: HEIGHT * 0.025,
-        fontWeight: 'bold',
+        fontSize: HEIGHT * 0.018,
+        //fontWeight: 'bold',
+        fontFamily: "PokemonClassic",
+        textTransform: 'uppercase',
+    },
+    pokeDesc:{
+        color: "#696969",
     },
     textRow:{
         flexDirection: 'row',
@@ -113,6 +123,51 @@ const styles = StyleSheet.create({
         backgroundColor: "#B22222",
         marginVertical: 10,
         elevation: 3,
-    },     
+    },    
+    // MY TEAMS SCREEN
+    screen:{
+        flex: 1,
+    },
+    mainScreen:{
+        flex: 1,
+    },
+    myTeamsContainer:{
+        flex: 1,
+        padding: 20,
+    },
+    listTeams:{
+        flex: 1,
+        paddingVertical: 20,
+    },
+    itemContainer:{
+        flex: 1,
+        alignItems: "flex-start",
+        justifyContent: "center",
+        borderRadius: 10,
+        backgroundColor: "#B22222",
+        padding: 20,
+        marginVertical: 10,
+        elevation: 5,
+    },
+    name:{
+        fontSize: HEIGHT * 0.025,
+        color: "#fff",
+        fontFamily: 'PokemonClassic',
+    },
+    region:{
+        fontSize: HEIGHT * 0.018,
+        color: "#fff",
+        fontFamily: 'PokemonClassic',
+    },
+    noTeamsContainer:{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    textNoTeams:{
+        fontSize: HEIGHT * 0.028,
+        fontFamily: "PokemonClassic",
+        textAlign: "center",
+    },
 })
 export default styles;
