@@ -1,53 +1,94 @@
-import React, { Component } from 'react';
-import { Text, View, FlatList, TouchableOpacity, ActivityIndicator } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import { Text, View, FlatList, ActivityIndicator, TouchableOpacity } from 'react-native';
+import database from '@react-native-firebase/database';
 import styles from "../assets/styles/style";
-import Api from '../Api';
 
-export default class Teams extends Component {
+const Teams = props => {
+  const [teams, setTeams] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-    state={
-        list:[],
-    }
+  useEffect(() => {
+    setIsLoading(true);
+    const loadTeams = () => {
+      database()
+        .ref('/teams')
+        .on('value', snapshot => {
+          if (!snapshot.val()) {
+            setTeams([]);
+            setIsLoading(false);
+            return;
+          } else {
+            setTeams(
+              Object.keys(snapshot.val())
+                .map(el => ({
+                  ...snapshot.val()[el],
+                  id: el,
+                }))
+                .sort(
+                  (a, b) =>
+                    new Date(b.createdAt).getTime() -
+                    new Date(a.createdAt).getTime(),
+                ),
+            );
+          }
 
-    async componentDidMount (){
-        try {
-            const data = await Api.getRegion()
-            this.setState({list:data})
-        } catch (err) {
-            console.log(err)
-        }
-    }
+          setIsLoading(false);
+        });
+    };
 
-    empty = () => <View style={{flex:1, justifyContent:'center', alignItems: 'center' }}>
-    <ActivityIndicator size="small" color="#0000ff" />
-    </View>
+    loadTeams();
+  }, []);
 
-    renderIt = ({item}) => {
-      return(
-        <TouchableOpacity
-        style={styles.btnRegion}
-        onPress ={()=> {this.props.navigation.navigate('Add New Team');}}
-        >
-            <Text style={styles.textBtnRegion}>{item.name}</Text>
-        </TouchableOpacity>
-      )  
-    }
-    render() {
-        return (
-            <View style={styles.mainContainer}>
-                <Text style={styles.titleHome}>My Teams</Text>
-                <Text style={styles.descriptionHome}>Choose a region and create a new team.</Text>
-                <View>
-                   
-                        <FlatList
-                            data={this.state.list}
-                            ListEmptyComponent={this.empty}
-                            renderItem={this.renderIt}
-                        >
-                        </FlatList>
-                    
-                </View>
+
+  return (
+    <View style={styles.screen}>
+      <View style={styles.mainScreen}>
+        {isLoading && (
+          <View style={styles.screen}>
+            <ActivityIndicator size="large" color="red" />
+          </View>
+        )}
+        {teams.length !== 0 && !isLoading ? (
+          <View style={styles.myTeamsContainer}>
+            <Text style={styles.titleHome}>My Teams</Text>
+            <View style={styles.listTeams}>
+              <FlatList
+                data={teams.length > 0 && teams}
+                renderItem={({item}) => (
+                  <View style={styles.itemContainer}>
+                    <TouchableOpacity
+                      style={{borderRadius: 10}}
+                      activeOpacity={0.9}
+                      onPress={() =>
+                        props.navigation.navigate('ViewTeam', {
+                          team: item,
+                        })
+                      }>
+                      <View>
+                        <View>
+                          <Text style={styles.name}>{item.teamName}</Text>
+                          <Text style={styles.region}>{item.region}</Text>
+                        </View>
+                      </View>
+                    </TouchableOpacity>
+                  </View>
+                )}
+              />
             </View>
-        )
-    }
-}
+          </View>
+        ) : (
+          teams.length === 0 &&
+          !isLoading && (
+            <View style={styles.screen}>
+              <View style={styles.noTeamsContainer}>
+                <Text style={styles.textNoTeams}>No Teams Added Yet. Start Adding Some!</Text>
+              </View>
+            </View>
+          )
+        )}
+      </View>
+    </View>
+  );
+};
+
+export default Teams;

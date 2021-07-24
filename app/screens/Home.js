@@ -14,7 +14,6 @@ export default class Home extends Component {
         try {
             const data = await Api.getRegion()
             this.setState({list:data})
-            console.log(data);
         } catch (err) {
             console.log(err)
         }
@@ -28,7 +27,7 @@ export default class Home extends Component {
       return(
         <TouchableOpacity
         style={styles.btnRegion}
-        onPress ={()=> {this.props.navigation.navigate('Add New Team',  {region: item}) }}
+        onPress ={()=> {this.props.navigation.navigate('AddNewTeam',  {region: item}) }}
         >
             <Text style={styles.textBtn}>{item.name}</Text>
         </TouchableOpacity>
@@ -43,6 +42,7 @@ export default class Home extends Component {
                     <FlatList
                         data={this.state.list}
                         ListEmptyComponent={this.empty}
+                        keyExtractor={(item) => item.name.toString()}
                         renderItem={this.renderIt}
                     >
                     </FlatList>
