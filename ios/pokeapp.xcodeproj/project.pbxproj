@@ -28,6 +28,9 @@
 		9CD87248528C44EB83F1F745 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC69DF3B85A949BBAF4BA7A3 /* Octicons.ttf */; };
 		B2D8702FEB9E4F0AA028F74C /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD5DEB05B9BE43ACB24309F1 /* SimpleLineIcons.ttf */; };
 		4C3BC89ED9474658B34C70FC /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CA5080EED404F5BBBCEA04D /* Zocial.ttf */; };
+		39EEB5AC7A5B4603BE101E04 /* PokemonClassic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97C4957C22A8413F9FA5FC1B /* PokemonClassic.ttf */; };
+		D128178B79E946E8BD7B6B47 /* RenogareRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0089A7E7615A436E8B1DE286 /* RenogareRegular.otf */; };
+		AB8A7588D40141E89CFCA340 /* Symtext.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35F115546F9242E785A50141 /* Symtext.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		FC69DF3B85A949BBAF4BA7A3 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		CD5DEB05B9BE43ACB24309F1 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1CA5080EED404F5BBBCEA04D /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		97C4957C22A8413F9FA5FC1B /* PokemonClassic.ttf */ = {isa = PBXFileReference; name = "PokemonClassic.ttf"; path = "../app/assets/fonts/PokemonClassic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0089A7E7615A436E8B1DE286 /* RenogareRegular.otf */ = {isa = PBXFileReference; name = "RenogareRegular.otf"; path = "../app/assets/fonts/RenogareRegular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		35F115546F9242E785A50141 /* Symtext.ttf */ = {isa = PBXFileReference; name = "Symtext.ttf"; path = "../app/assets/fonts/Symtext.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,9 @@
 				FC69DF3B85A949BBAF4BA7A3 /* Octicons.ttf */,
 				CD5DEB05B9BE43ACB24309F1 /* SimpleLineIcons.ttf */,
 				1CA5080EED404F5BBBCEA04D /* Zocial.ttf */,
+				97C4957C22A8413F9FA5FC1B /* PokemonClassic.ttf */,
+				0089A7E7615A436E8B1DE286 /* RenogareRegular.otf */,
+				35F115546F9242E785A50141 /* Symtext.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,6 +296,9 @@
 				9CD87248528C44EB83F1F745 /* Octicons.ttf in Resources */,
 				B2D8702FEB9E4F0AA028F74C /* SimpleLineIcons.ttf in Resources */,
 				4C3BC89ED9474658B34C70FC /* Zocial.ttf in Resources */,
+				39EEB5AC7A5B4603BE101E04 /* PokemonClassic.ttf in Resources */,
+				D128178B79E946E8BD7B6B47 /* RenogareRegular.otf in Resources */,
+				AB8A7588D40141E89CFCA340 /* Symtext.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
