@@ -1183,13 +1183,18 @@
   "resolved" "https://registry.npmjs.org/@react-native-community/masked-view/-/masked-view-0.1.11.tgz"
   "version" "0.1.11"
 
-"@react-native-firebase/app@^12.3.0":
+"@react-native-firebase/app@^12.3.0", "@react-native-firebase/app@12.3.0":
   "integrity" "sha512-8jF7PXtvAA59YN9Hqf7mqMV4kvmEXO1XrGc8fRuOQ08g6OKEYZPDBvDsiLVy3oLw911Vznu2dllwQVm+K7Wcgw=="
   "resolved" "https://registry.npmjs.org/@react-native-firebase/app/-/app-12.3.0.tgz"
   "version" "12.3.0"
   dependencies:
     "opencollective-postinstall" "^2.0.1"
     "superstruct" "^0.6.2"
+
+"@react-native-firebase/database@^12.3.0":
+  "integrity" "sha512-6jmntjgStx6jSNzsWWCjlk3Qt2LHirp26O1MUbCHhZn5dXdSuL4w55fjOr/x+euCwN5C4hGeFMPqT6yeqgfdGQ=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/database/-/database-12.3.0.tgz"
+  "version" "12.3.0"
 
 "@react-native/assets@1.0.0":
   "integrity" "sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ=="
